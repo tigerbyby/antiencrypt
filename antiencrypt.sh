@@ -4,6 +4,12 @@
 # This scipt parse smbd_audit log file. Experimental variant
 # You need to add 
 # log level = 0 vfs:2 
+# vfs objects = full_audit
+# full_audit:facility=LOCAL5
+# full_audit:priority=INFO
+# full_audit:failure = mkdir rmdir pwrite unlink rename
+# full_audit:success = mkdir rmdir pwrite unlink rename
+# full_audit:prefix = smbd_audit:%S|%u|%I
 # into smb.conf. And
 # :msg, contains, "smbd_audit"    /var/log/smbd_audit/smbd_audit.log
 # :msg, contains, "smbd_audit"    stop
